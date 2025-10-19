@@ -3,29 +3,25 @@ import DownloadButton from "./DownloaButton"
 import useUsers from "../hook/useUser";
 import { getCurrentDateFormatted } from "../utils/formatDate";
 import { AlertCircle, Loader2 } from "lucide-react";
+import { useBlobDownloader } from "../hook/useBlobDownloader";
 
 const Home = () => {
     const { users, isLoading, error } = useUsers();
 
     const { downloadFile } =  useDownloadFile();
+    const  { downloadBlob } = useBlobDownloader();
 
 
-    const handleDownload = async () => {
-    try {
-        const blob = await downloadFile();
-
-        if (!blob) return;
-
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = getCurrentDateFormatted('usuarios');
-        link.click();
-        URL.revokeObjectURL(url);
-    } catch (err) {
-        console.error("Erro ao baixar o arquivo:", err);
-    }
-    };
+    
+const handleDownload = async () => {
+  try {
+    const blob = await downloadFile();
+    if (!blob) return;
+    downloadBlob(blob, getCurrentDateFormatted('usuarios'));
+  } catch (err) {
+    console.error("Erro ao baixar o arquivo:", err);
+  }
+};
 
     if (isLoading) {
     return (
@@ -90,4 +86,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;
