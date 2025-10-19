@@ -28,7 +28,7 @@ Aplicação **fullstack** construída com **React + Vite (frontend)** e **Fastif
 
 ### 1️⃣ Clonar o repositório
 ```bash
-git clone https://github.com/erika-perciliano/download-file.git
+git clone https://github.com/erikaperciliano/download-file.git
 cd download-file
 
 ```
