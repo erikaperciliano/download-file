@@ -1,3 +1,4 @@
+// lida com o DOM (download real)
 export const saveBlobAsFile  = (blob: Blob, filename: string): void => {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");

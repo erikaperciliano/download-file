@@ -1,8 +1,4 @@
-/*
- useDownloadFile:
-  - faz o fetch e gerencia estados
-*/
-
+// hook genérico para executar o fetch (via SWR Mutation)
 import useSWRMutation from "swr/mutation";
 interface UseDownloadFileReturn<T> {
   downloadFile: () => Promise<T | undefined>;

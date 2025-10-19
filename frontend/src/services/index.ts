@@ -1,3 +1,4 @@
+// faz o fetch para o backend
 import { apiUrl } from "../api";
 
 const downloadUsersCSV = async () => {

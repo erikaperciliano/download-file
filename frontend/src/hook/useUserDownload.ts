@@ -1,3 +1,4 @@
+// especializa o hook genérico
 import { useDownloadResource } from "./useDownloadResource";
 import downloadUsersCSV from "../services";
 
